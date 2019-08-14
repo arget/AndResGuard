@@ -52,6 +52,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -1197,7 +1198,7 @@ public class ARSCDecoder {
       if (mReplaceStringBuffer.isEmpty()) {
         throw new AndrolibException(String.format("now can only proguard less than 35594 in a single type\n"));
       }
-      return mReplaceStringBuffer.remove(0);
+      return mReplaceStringBuffer.remove(new Random().nextInt(mReplaceStringBuffer.size()));
     }
   }
 }
